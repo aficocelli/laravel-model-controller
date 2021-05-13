@@ -22,6 +22,7 @@ class CreateSongsTable extends Migration
             $table->year('released_year');
             $table->timestamps();
         });
+        
     }
 
     /**
@@ -32,5 +33,6 @@ class CreateSongsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('songs');
+
     }
 }

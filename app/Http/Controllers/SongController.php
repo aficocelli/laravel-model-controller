@@ -11,7 +11,8 @@ class SongController extends Controller
 
         $songs = Song::all();
 
-        dd($songs);
-        return view('welcome');
+        return view('home',[
+            'songs' => $songs
+        ]);
     }
 }
