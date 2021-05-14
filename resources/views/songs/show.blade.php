@@ -8,5 +8,9 @@
 </head>
 <body>
     <h1>{{$song->title}}</h1>
+    <h2>{{$song -> author}}</h2>
+    <p>{{$song -> genre}}</p>
+    <p>{{$song -> released_year}}</p>
+
 </body>
 </html>

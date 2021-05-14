@@ -20,7 +20,7 @@
             <h3>{{$song -> author}}</h3>
             <p>{{$song -> genre}}</p>
             <p>{{$song -> released_year}}</p>
-
+            <a href="{{route('songs',[ 'song'=> $song -> id ])}}">Clicca per ulteriori dettagli</a>
 
         </div>
     @endforeach

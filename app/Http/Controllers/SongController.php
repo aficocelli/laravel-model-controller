@@ -16,8 +16,8 @@ class SongController extends Controller
     {
         $songs = Song::all();
 
-        return view('index', [
-            'songs'=> $songs
+        return view('songs.index', [
+            'songs' => $songs
         ]);
     }
 
@@ -50,11 +50,7 @@ class SongController extends Controller
      */
     public function show($id)
     {
-        $song = Song::find($id);
-
-        return view('show',[
-            'song'=>$song
-        ]);
+        //
     }
 
     /**
