@@ -11,6 +11,6 @@
     <h2>{{$song -> author}}</h2>
     <p>{{$song -> genre}}</p>
     <p>{{$song -> released_year}}</p>
-
+    <a href="{{route('songs.index')}}">Back</a>
 </body>
 </html>
