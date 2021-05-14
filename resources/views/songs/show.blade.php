@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
 <body>
-    <h1>{{$song->title}}</h1>
-    <h2>{{$song -> author}}</h2>
-    <p>{{$song -> genre}}</p>
-    <p>{{$song -> released_year}}</p>
-    <a href="{{route('songs.index')}}">Back</a>
+    <div class="song">
+        <img src="{{$song -> cover}}" alt="">
+        <h1>{{$song->title}}</h1>
+        <h2>{{$song -> author}}</h2>
+        <p>{{$song -> genre}}</p>
+        <p>{{$song -> released_year}}</p>
+        <a href="{{route('songs.index')}}">Back</a>
+    </div>
 </body>
 </html>

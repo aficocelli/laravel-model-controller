@@ -1,0 +1,24 @@
+h1 {
+    text-align:center;
+    font-size:46px;
+    margin: 20px 0;
+}
+
+// box song
+
+.playlist{
+    display:flex;
+    justify-content: space-around;
+    flex-wrap:wrap;
+    .box{
+        width:200px;
+        margin: 0 10px;
+        text-align:center;
+        .cover{
+            width:200px;
+            img{
+                width:100%;
+            }
+        }
+    }
+}

@@ -26,3 +26,7 @@ h1 {
 .playlist .box .cover img {
   width: 100%;
 }
+
+.song {
+  text-align: center;
+}
