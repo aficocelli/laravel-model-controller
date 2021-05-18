@@ -39,7 +39,19 @@ class SongController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        
+        $songNew = new Song();
+
+        $songNew->title = $data['title'];
+        $songNew->album = $data['album'];
+        $songNew->author = $data['author'];
+        $songNew->genre = $data['genre'];
+        $songNew->cover = $data['cover'];
+        $songNew->released_year = $data['released_year'];
+
+
+        $songNew -> save();
     }
 
     /**

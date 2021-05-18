@@ -10,7 +10,11 @@
 <body>
     <h1>Aggiungi una nuova canzone</h1>
 
-    <form>
+    <form action="{{route('songs.store')}}" method="post">
+
+    @csrf
+
+    @method('POST')
         <div class="form-group">
             <label for="title">Title</label>
             <input type="text" class="form-control" id="title" placeholder="Title" name="title">    
@@ -28,6 +32,10 @@
             <input type="text" class="form-control" id="genre" placeholder="genre" name="genre">    
         </div>
         <div class="form-group">
+            <label for="cover">Cover</label>
+            <input type="text" class="form-control" id="cover" placeholder="cover" name="cover">    
+        </div>
+        <div class="form-group">
             <label for="released_year">Year</label>
             <select class="form-control" name="released_year">
                 @for ($i = 1900; $i <= date("Y") +1; $i++)
@@ -36,7 +44,7 @@
             </select>
         </div>
         
-        <button type="submit" class="btn btn-primary">Salva</button>
+        <button type="submit" class="btn btn-primary" value="invia">Salva</button>
     </form>
 </body>
 </html>
