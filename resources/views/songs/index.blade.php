@@ -10,22 +10,34 @@
 <body>
     <h1>Playlist</h1>
     <section>
-        <div class="playlist">
+        
+        <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">cover</th>
+                <th scope="col">title</th>
+                <th scope="col">author</th>
+                <th scope="col">genre</th>
+                <th scope="col">released year</th>
+                <th scope="col">action</th>
+                </tr>
+            </thead>
+            <tbody>
             @foreach ($songs as $song)
                 
-            <div class="box">
-                <div class="cover">
-                    <img src="{{$song -> cover}}" alt="">
-                </div>
-                <h2>{{$song -> title}}</h2>
-                <h3>{{$song -> author}}</h3>
-                <p>{{$song -> genre}}</p>
-                <p>{{$song -> released_year}}</p>
-                <a href="{{route('songs.show',[ 'song'=> $song -> id ])}}">Clicca per ulteriori dettagli</a>
+            <tr>
+                
+                <td class="table_data"><img src="{{$song -> cover}}" alt=""></td>
+                <td class="table_data">{{$song -> title}}</td>
+                <td class="table_data">{{$song -> author}}</td>
+                <td class="table_data">{{$song -> genre}}</td>
+                <td class="table_data">{{$song -> released_year}}</td>
+                <td class="table_data"><a href="{{route('songs.show',[ 'song'=> $song -> id ])}}">Clicca per ulteriori dettagli</a></td>
 
-            </div>
-        @endforeach
-        </div>
+            </tr>
+            @endforeach
+            </tbody>
+        </table>
     </section>
 </body>
 </html>

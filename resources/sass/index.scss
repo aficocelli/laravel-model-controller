@@ -6,19 +6,12 @@ h1 {
 
 // box song
 
-.playlist{
-    display:flex;
-    justify-content: space-around;
-    flex-wrap:wrap;
-    .box{
-        width:200px;
-        margin: 0 10px;
-        text-align:center;
-        .cover{
-            width:200px;
-            img{
-                width:100%;
-            }
-        }
+img{
+    width:100px;
+}
+table{
+
+    .table_data{
+        vertical-align: middle;
     }
 }

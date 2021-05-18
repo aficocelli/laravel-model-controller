@@ -10008,21 +10008,12 @@ h1 {
   margin: 20px 0;
 }
 
-.playlist {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+img {
+  width: 100px;
 }
-.playlist .box {
-  width: 200px;
-  margin: 0 10px;
-  text-align: center;
-}
-.playlist .box .cover {
-  width: 200px;
-}
-.playlist .box .cover img {
-  width: 100%;
+
+table .table_data {
+  vertical-align: middle;
 }
 
 .song {
