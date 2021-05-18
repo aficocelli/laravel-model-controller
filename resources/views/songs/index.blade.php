@@ -10,7 +10,9 @@
 <body>
     <h1>Playlist</h1>
     <section>
-        
+        <div class="py-2 text-right">
+            <a href="{{route('songs.create')}}"><button type="button" class="btn btn-success">Add. Movie</button></a>
+        </div>
         <table class="table">
             <thead>
                 <tr>
