@@ -52,6 +52,8 @@ class SongController extends Controller
 
 
         $songNew -> save();
+
+        return redirect() -> route('songs.show', $songNew);
     }
 
     /**
