@@ -9,21 +9,23 @@
 </head>
 <body>
     <h1>Playlist</h1>
-    <section class="playlist">
-        @foreach ($songs as $song)
-            
-        <div class="box">
-            <div class="cover">
-                <img src="{{$song -> cover}}" alt="">
-            </div>
-            <h2>{{$song -> title}}</h2>
-            <h3>{{$song -> author}}</h3>
-            <p>{{$song -> genre}}</p>
-            <p>{{$song -> released_year}}</p>
-            <a href="{{route('songs.show',[ 'song'=> $song -> id ])}}">Clicca per ulteriori dettagli</a>
+    <section>
+        <div class="playlist">
+            @foreach ($songs as $song)
+                
+            <div class="box">
+                <div class="cover">
+                    <img src="{{$song -> cover}}" alt="">
+                </div>
+                <h2>{{$song -> title}}</h2>
+                <h3>{{$song -> author}}</h3>
+                <p>{{$song -> genre}}</p>
+                <p>{{$song -> released_year}}</p>
+                <a href="{{route('songs.show',[ 'song'=> $song -> id ])}}">Clicca per ulteriori dettagli</a>
 
+            </div>
+        @endforeach
         </div>
-    @endforeach
     </section>
 </body>
 </html>
