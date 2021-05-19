@@ -38,22 +38,24 @@ class SongController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $data = $request->all();
+    {   
+        // validation
+        $year = date('Y') + 1;
+        $rules = [
+            'title' => 'required|string|max:100',
+            'album' => 'required|string|max:100',
+            'author' => 'required|string|max:50',
+            'genre' => 'required|string|max:50',
+            'released_year' => 'required|numeric|min:1900|max:'.$year,
+
+        ];
+        $request -> validate($rules);
+
+        Song::create($request->all());
         
-        $songNew = new Song();
 
-        $songNew->title = $data['title'];
-        $songNew->album = $data['album'];
-        $songNew->author = $data['author'];
-        $songNew->genre = $data['genre'];
-        $songNew->cover = $data['cover'];
-        $songNew->released_year = $data['released_year'];
-
-
-        $songNew -> save();
-
-        return redirect() -> route('songs.show', $songNew);
+        return redirect() -> route('songs.index');
+        
     }
 
     /**
