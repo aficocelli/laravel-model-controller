@@ -35,9 +35,13 @@
                 <td class="table_data">{{$song -> genre}}</td>
                 <td class="table_data">{{$song -> released_year}}</td>
                 <td class="table_data">
-                    <a href="{{route('songs.show',[ 'song'=> $song -> id ])}}"><button type="button" class="btn btn-primary">Visualizza</button></a>
-                    <a href="{{route('songs.edit',[ 'song'=> $song -> id ])}}"><button type="button" class="btn btn-success">Modifica</button></a>
-                    <a href="{{route('songs.show',[ 'song'=> $song -> id ])}}"><button type="button" class="btn btn-danger">Cancella</button></a>
+                    <a href="{{route('songs.show',[ 'song'=> $song -> id ])}}"><button type="submit" class="btn btn-primary">Visualizza</button></a>
+                    <a href="{{route('songs.edit',[ 'song'=> $song -> id ])}}"><button type="submit" class="btn btn-success">Modifica</button></a>
+                    <form action="{{route('songs.destroy', ['song'=> $song -> id])}}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Cancella</button>
+                    </form>
                 </td>
 
             </tr>
