@@ -14,4 +14,9 @@ class SongController extends Controller
         return response() -> json($songs);
 
     }
+
+    public function show(Song $song){
+        
+        return response() -> json($song);
+    }
 }
