@@ -46,7 +46,7 @@ class SongController extends Controller
             'album' => 'required|string|max:100',
             'author' => 'required|string|max:50',
             'genre' => 'required|string|max:50',
-            'released_year' => 'required|numeric|min:1900|max:'.$year,
+            
 
         ];
         $request -> validate($rules);
@@ -78,9 +78,11 @@ class SongController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Song $song)
     {
-        //
+        return view('songs.edit', [
+            'song' => $song
+        ]);
     }
 
     /**
@@ -90,9 +92,23 @@ class SongController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Song $song)
     {
-        //
+        // validation
+        $year = date('Y') + 1;
+        $rules = [
+            'title' => 'required|string|max:100',
+            'album' => 'required|string|max:100',
+            'author' => 'required|string|max:50',
+            'genre' => 'required|string|max:50',
+            'cover' => 'required|string|max:50'
+
+        ];
+        $request->validate($rules);
+
+        $song -> update($request -> all());
+
+        return redirect()-> route('songs.show', ['song' => $song]);
     }
 
     /**

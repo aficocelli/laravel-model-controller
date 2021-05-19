@@ -34,7 +34,11 @@
                 <td class="table_data">{{$song -> author}}</td>
                 <td class="table_data">{{$song -> genre}}</td>
                 <td class="table_data">{{$song -> released_year}}</td>
-                <td class="table_data"><a href="{{route('songs.show',[ 'song'=> $song -> id ])}}"><button type="button" class="btn btn-primary">Visualizza</button></a></td>
+                <td class="table_data">
+                    <a href="{{route('songs.show',[ 'song'=> $song -> id ])}}"><button type="button" class="btn btn-primary">Visualizza</button></a>
+                    <a href="{{route('songs.edit',[ 'song'=> $song -> id ])}}"><button type="button" class="btn btn-success">Modifica</button></a>
+                    <a href="{{route('songs.show',[ 'song'=> $song -> id ])}}"><button type="button" class="btn btn-danger">Cancella</button></a>
+                </td>
 
             </tr>
             @endforeach
